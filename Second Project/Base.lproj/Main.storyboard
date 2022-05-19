@@ -260,7 +260,6 @@
         <!--Nova Atividade View Controller-->
         <scene sceneID="lw6-Uj-G0O">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gvA-Z7-dTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Cd6-43-DRH" customClass="NovaAtividadeViewController" customModule="Second_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ke3-mI-lmt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -403,12 +402,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="dtx-1L-HOH"/>
                     <connections>
+                        <outlet property="NomeAtividade" destination="I5K-5S-pfw" id="9b3-lx-bOK"/>
                         <outlet property="numeroAtividadesLaranja" destination="X6M-HG-D56" id="O2u-Rg-dH3"/>
                         <outlet property="numeroFrequencia" destination="Miv-GO-DKl" id="d4V-xd-Xwh"/>
                         <outlet property="numeroTotalDeAtividades" destination="RYE-vO-nTZ" id="amu-0v-HDy"/>
                         <outlet property="sliderDistribuicao" destination="5ti-AU-dnT" id="5to-C0-fz3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvA-Z7-dTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2732.3076923076924" y="-656.87203791469187"/>
         </scene>
@@ -456,7 +457,7 @@
                                 <rect key="frame" x="16" y="118" width="358" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhU-hz-d4T">
                                 <rect key="frame" x="16" y="179" width="358" height="53"/>

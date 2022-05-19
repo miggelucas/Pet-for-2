@@ -9,12 +9,7 @@ import UIKit
 
 class HomePageViewController: UIViewController {
     
-    var atividades = [
-        "Dar Racão",
-        "Levar para passear",
-        "Dar remédio",
-        "Momento de brincadeira"
-    ]
+    var atividades: [Atividade] = []
     
     @IBOutlet var tableView: UITableView!
 
@@ -23,10 +18,14 @@ class HomePageViewController: UIViewController {
         
         //tableView.delegate = self
         tableView.dataSource = self
+        
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
@@ -57,7 +56,7 @@ extension HomePageViewController: UITableViewDataSource {
         
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "AtividadeCell", for: indexPath) as! AtividadeCell
         
-        tableViewCell.descicaoAtividade.text = atividades[indexPath.row]
+        tableViewCell.descicaoAtividade.text = atividades[indexPath.row].nome
 
         return tableViewCell
     }

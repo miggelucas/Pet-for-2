@@ -16,7 +16,8 @@ class SumarioViewController: UIViewController {
     @IBOutlet weak var progressBarLazer: UIProgressView!
     @IBOutlet weak var progressBarCuidado: UIProgressView!
     @IBOutlet weak var progressBarHigiene: UIProgressView!
-    @IBOutlet weak var progressBaroOutros: UIProgressView!
+    @IBOutlet weak var progressBarOutros: UIProgressView!
+    
     
     
     
@@ -33,6 +34,34 @@ class SumarioViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let homePageViewController = tabBarController?.viewControllers![1] as! HomePageViewController
+    
+        // progressBarAzul.progress = novo valor
+        
+        var totalAtividades: Int
+        var totalAtividadesAzul : Int
+        var totalAtividadesLaranja: Int
+        
+//        for atividade in // homePageViewController.atividades {
+//            atividade.
+  //      }
+        
+        
+    }
+/*
+    func calculaAtivadesAzul(totalAtividades: Int, distribuicao: Float) -> Int {
+        let totalAtividades = Float(calculaTotalDeAtividade(diasDaSemana: self.diasDaSemana, frequencia: self.frequencia))
+        let distribuicao = self.distribuicao
+        let numeroAtividadesAzul = Double(totalAtividades * distribuicao)
+        
+        return Int(round(numeroAtividadesAzul))
+    }
+
+  */
+    
+    
+
     @IBAction func recomeçaSemana(_ sender: Any) {
         // deve limpar todos as entradas de atividades
         // deve resetar todas as barras de progresso

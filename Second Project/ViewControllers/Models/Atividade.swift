@@ -31,13 +31,6 @@ class Atividade {
         return numeroDeDias * frequencia
     }
 
-    func calculaAtivadesAzul(totalAtividades: Int, distribuicao: Float) -> Int {
-        let totalAtividades = Float(calculaTotalDeAtividade(diasDaSemana: self.diasDaSemana, frequencia: self.frequencia))
-        let distribuicao = self.distribuicao
-        let numeroAtividadesAzul = Double(totalAtividades * distribuicao)
-        
-        return Int(round(numeroAtividadesAzul))
-    }
 
     func calculaAtividadesLaranja(totalAtividades: Int, distribuicao: Float) -> Int {
         let totalAtividades = Float(calculaTotalDeAtividade(diasDaSemana: self.diasDaSemana, frequencia: self.frequencia))
