@@ -23,6 +23,10 @@ class NovaAtividadeViewController: UIViewController {
     }
     
     @IBAction func registrar() {
+        let diasDaSemanaViewController = navigationController?.viewControllers[0] as! DiasDaSemanaViewController
+        
+        _ = diasDaSemanaViewController.diasDaSemanaAtivados
+        
         // aqui calcular o que se precisa para construir a classe de atividade
         // total de atividade
         // distrbuição

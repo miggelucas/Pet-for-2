@@ -35,13 +35,13 @@ class SumarioViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let homePageViewController = tabBarController?.viewControllers![1] as! HomePageViewController
+        //let homePageViewController = tabBarController?.viewControllers![1] as! HomePageViewController
     
         // progressBarAzul.progress = novo valor
         
-        var totalAtividades: Int
-        var totalAtividadesAzul : Int
-        var totalAtividadesLaranja: Int
+        //var totalAtividades: Int
+        //var totalAtividadesAzul : Int
+        //var totalAtividadesLaranja: Int
         
 //        for atividade in // homePageViewController.atividades {
 //            atividade.

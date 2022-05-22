@@ -246,11 +246,12 @@
                     <tabBarItem key="tabBarItem" title="Item 2" id="0O8-bg-UDo"/>
                     <connections>
                         <outlet property="progressBarAlimentacao" destination="Nmx-2F-p3I" id="XCS-Yy-hU8"/>
+                        <outlet property="progressBarAzul" destination="FV0-KQ-UL7" id="Ilh-qk-YhT"/>
                         <outlet property="progressBarCuidado" destination="eE9-Wv-aEJ" id="atK-0z-mUK"/>
                         <outlet property="progressBarHigiene" destination="RcC-Iu-IR5" id="Gjd-Nw-dV1"/>
                         <outlet property="progressBarLaranja" destination="7k2-ED-gIU" id="2RL-LY-wgv"/>
                         <outlet property="progressBarLazer" destination="YsF-AF-Tse" id="I2m-AG-CGu"/>
-                        <outlet property="progressBaroOutros" destination="XIt-uh-I4G" id="f2S-YS-qPu"/>
+                        <outlet property="progressBarOutros" destination="XIt-uh-I4G" id="4qV-OG-0ej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7A-FN-but" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -403,6 +404,7 @@
                     <navigationItem key="navigationItem" id="dtx-1L-HOH"/>
                     <connections>
                         <outlet property="NomeAtividade" destination="I5K-5S-pfw" id="9b3-lx-bOK"/>
+                        <outlet property="numeroAtividadesAzul" destination="ydA-vz-rqL" id="RUc-Ol-2xJ"/>
                         <outlet property="numeroAtividadesLaranja" destination="X6M-HG-D56" id="O2u-Rg-dH3"/>
                         <outlet property="numeroFrequencia" destination="Miv-GO-DKl" id="d4V-xd-Xwh"/>
                         <outlet property="numeroTotalDeAtividades" destination="RYE-vO-nTZ" id="amu-0v-HDy"/>
@@ -413,10 +415,10 @@
             </objects>
             <point key="canvasLocation" x="-2732.3076923076924" y="-656.87203791469187"/>
         </scene>
-        <!--View Controller-->
+        <!--Dias Da Semana View Controller-->
         <scene sceneID="Q3M-lq-LCa">
             <objects>
-                <viewController id="liu-rN-08p" sceneMemberID="viewController">
+                <viewController id="liu-rN-08p" customClass="DiasDaSemanaViewController" customModule="Second_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FDB-mc-biN">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -425,81 +427,49 @@
                                 <rect key="frame" x="-35" y="25" width="460" height="674"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="Qr3-3C-sMo">
-                                <rect key="frame" x="311" y="126" width="71" height="37"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kn2-LJ-PgN">
+                                <rect key="frame" x="316" y="128" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="dL2-Gg-EkM">
-                                <rect key="frame" x="311" y="187" width="71" height="37"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AUj-Rc-EDf">
+                                <rect key="frame" x="316" y="189" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="bmr-Rm-j6c">
-                                <rect key="frame" x="311" y="248" width="71" height="37"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GzW-Q9-pGJ">
+                                <rect key="frame" x="316" y="249" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="aH8-VP-23O">
-                                <rect key="frame" x="311" y="309" width="71" height="37"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DRC-fY-CHb">
+                                <rect key="frame" x="316" y="309" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="b0g-e2-E7N">
-                                <rect key="frame" x="311" y="426" width="71" height="37"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RMm-4f-VyJ">
+                                <rect key="frame" x="316" y="370" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="Yzf-23-4Zo">
-                                <rect key="frame" x="311" y="487" width="71" height="37"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DLg-5G-Rdt">
+                                <rect key="frame" x="316" y="430" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="zKu-Wu-bkI">
-                                <rect key="frame" x="311" y="370" width="71" height="37"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5xv-cc-eC8">
+                                <rect key="frame" x="316" y="490" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksu-iV-QdV">
-                                <rect key="frame" x="16" y="118" width="358" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=""/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhU-hz-d4T">
-                                <rect key="frame" x="16" y="179" width="358" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJM-xj-TWx">
-                                <rect key="frame" x="16" y="240" width="358" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc5-BN-Ixf">
-                                <rect key="frame" x="16" y="301" width="358" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amU-pn-stz">
-                                <rect key="frame" x="9" y="362" width="358" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdo-gd-qcs">
-                                <rect key="frame" x="16" y="423" width="358" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v52-5R-dtY">
-                                <rect key="frame" x="16" y="479" width="358" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                            </button>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fye-fx-yem"/>
                         <color key="backgroundColor" red="0.98431372640000003" green="0.92156863209999995" blue="0.70980393890000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nyg-Ca-uFU"/>
+                    <connections>
+                        <outlet property="botaoVoltar" destination="Nyg-Ca-uFU" id="bbx-O9-hhx"/>
+                        <outlet property="switchDomingo" destination="5xv-cc-eC8" id="6rk-be-bsK"/>
+                        <outlet property="switchQuarta" destination="GzW-Q9-pGJ" id="LgB-Tv-ntz"/>
+                        <outlet property="switchQuinta" destination="DRC-fY-CHb" id="iKY-ve-hcf"/>
+                        <outlet property="switchSabado" destination="DLg-5G-Rdt" id="zdr-83-KnN"/>
+                        <outlet property="switchSegunda" destination="Kn2-LJ-PgN" id="Eg1-Kc-9yC"/>
+                        <outlet property="switchSexta" destination="RMm-4f-VyJ" id="b5l-MO-BOw"/>
+                        <outlet property="switchTerca" destination="AUj-Rc-EDf" id="YSS-Vo-POP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSd-Hd-xiQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -598,6 +568,7 @@
         <!--Item 1-->
         <scene sceneID="NRQ-Xl-1kQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RFG-mB-bhO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DYx-5g-SML" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="mj7-yv-qvb"/>
                     <toolbarItems/>
@@ -610,7 +581,6 @@
                         <segue destination="Cd6-43-DRH" kind="relationship" relationship="rootViewController" id="k6f-DG-Ye3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RFG-mB-bhO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3642.0289855072465" y="-656.25"/>
         </scene>

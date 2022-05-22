@@ -12,6 +12,7 @@
 		177DB78D28353B7D00876C2F /* Atividade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DB78C28353B7D00876C2F /* Atividade.swift */; };
 		177DB7B32835675300876C2F /* AtividadeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DB7B22835675300876C2F /* AtividadeCell.swift */; };
 		17AD30B72832DEBC00019891 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AD30B62832DEBC00019891 /* NewTaskViewController.swift */; };
+		17D3C3462836AFD200EA61C9 /* DiasDaSemanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3C3452836AFD200EA61C9 /* DiasDaSemanaViewController.swift */; };
 		17F88F7828244210005D0D65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F88F7728244210005D0D65 /* AppDelegate.swift */; };
 		17F88F7A28244210005D0D65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F88F7928244210005D0D65 /* SceneDelegate.swift */; };
 		17F88F7C28244210005D0D65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F88F7B28244210005D0D65 /* ViewController.swift */; };
@@ -26,7 +27,8 @@
 		177DB78C28353B7D00876C2F /* Atividade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atividade.swift; sourceTree = "<group>"; };
 		177DB7B22835675300876C2F /* AtividadeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtividadeCell.swift; sourceTree = "<group>"; };
 		17AD30B62832DEBC00019891 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
-		17F88F7428244210005D0D65 /* Second Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Second Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D3C3452836AFD200EA61C9 /* DiasDaSemanaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasDaSemanaViewController.swift; sourceTree = "<group>"; };
+		17F88F7428244210005D0D65 /* PetFor2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetFor2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F88F7728244210005D0D65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17F88F7928244210005D0D65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		17F88F7B28244210005D0D65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +63,8 @@
 				17F88F7B28244210005D0D65 /* ViewController.swift */,
 				17AD30B62832DEBC00019891 /* NewTaskViewController.swift */,
 				177DB78A28343B3600876C2F /* HomePageViewController.swift */,
+				17D3C3452836AFD200EA61C9 /* DiasDaSemanaViewController.swift */,
 				176F1AFF2835846100EA18C1 /* SumarioViewController.swift */,
-				176F1AFD2835745200EA18C1 /* Models */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -70,7 +72,7 @@
 		17F88F6B28244210005D0D65 = {
 			isa = PBXGroup;
 			children = (
-				17F88F7628244210005D0D65 /* Second Project */,
+				17F88F7628244210005D0D65 /* PetFor2 */,
 				17F88F7528244210005D0D65 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,32 +80,33 @@
 		17F88F7528244210005D0D65 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17F88F7428244210005D0D65 /* Second Project.app */,
+				17F88F7428244210005D0D65 /* PetFor2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17F88F7628244210005D0D65 /* Second Project */ = {
+		17F88F7628244210005D0D65 /* PetFor2 */ = {
 			isa = PBXGroup;
 			children = (
 				177DB7B22835675300876C2F /* AtividadeCell.swift */,
 				17F88F7728244210005D0D65 /* AppDelegate.swift */,
 				17F88F7928244210005D0D65 /* SceneDelegate.swift */,
+				176F1AFD2835745200EA18C1 /* Models */,
 				176F1AFE28357C7100EA18C1 /* ViewControllers */,
 				17F88F7D28244210005D0D65 /* Main.storyboard */,
 				17F88F8028244213005D0D65 /* Assets.xcassets */,
 				17F88F8228244213005D0D65 /* LaunchScreen.storyboard */,
 				17F88F8528244213005D0D65 /* Info.plist */,
 			);
-			path = "Second Project";
+			path = PetFor2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17F88F7328244210005D0D65 /* Second Project */ = {
+		17F88F7328244210005D0D65 /* PetFor2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17F88F8828244213005D0D65 /* Build configuration list for PBXNativeTarget "Second Project" */;
+			buildConfigurationList = 17F88F8828244213005D0D65 /* Build configuration list for PBXNativeTarget "PetFor2" */;
 			buildPhases = (
 				17F88F7028244210005D0D65 /* Sources */,
 				17F88F7128244210005D0D65 /* Frameworks */,
@@ -113,9 +116,9 @@
 			);
 			dependencies = (
 			);
-			name = "Second Project";
+			name = PetFor2;
 			productName = "Second Project";
-			productReference = 17F88F7428244210005D0D65 /* Second Project.app */;
+			productReference = 17F88F7428244210005D0D65 /* PetFor2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,7 +136,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 17F88F6F28244210005D0D65 /* Build configuration list for PBXProject "Second Project" */;
+			buildConfigurationList = 17F88F6F28244210005D0D65 /* Build configuration list for PBXProject "PetFor2" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -146,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17F88F7328244210005D0D65 /* Second Project */,
+				17F88F7328244210005D0D65 /* PetFor2 */,
 			);
 		};
 /* End PBXProject section */
@@ -175,6 +178,7 @@
 				177DB7B32835675300876C2F /* AtividadeCell.swift in Sources */,
 				177DB78D28353B7D00876C2F /* Atividade.swift in Sources */,
 				176F1B002835846100EA18C1 /* SumarioViewController.swift in Sources */,
+				17D3C3462836AFD200EA61C9 /* DiasDaSemanaViewController.swift in Sources */,
 				177DB78B28343B3600876C2F /* HomePageViewController.swift in Sources */,
 				17F88F7A28244210005D0D65 /* SceneDelegate.swift in Sources */,
 			);
@@ -326,6 +330,7 @@
 				DEVELOPMENT_TEAM = 749Q737TF5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Second Project/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PetFor2;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -336,7 +341,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.academy.Second-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.academy.PetFor2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -354,6 +359,7 @@
 				DEVELOPMENT_TEAM = 749Q737TF5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Second Project/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PetFor2;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -364,7 +370,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.academy.Second-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.academy.PetFor2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -375,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17F88F6F28244210005D0D65 /* Build configuration list for PBXProject "Second Project" */ = {
+		17F88F6F28244210005D0D65 /* Build configuration list for PBXProject "PetFor2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17F88F8628244213005D0D65 /* Debug */,
@@ -384,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17F88F8828244213005D0D65 /* Build configuration list for PBXNativeTarget "Second Project" */ = {
+		17F88F8828244213005D0D65 /* Build configuration list for PBXNativeTarget "PetFor2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17F88F8928244213005D0D65 /* Debug */,
