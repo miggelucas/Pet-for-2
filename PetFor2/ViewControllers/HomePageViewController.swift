@@ -9,7 +9,36 @@ import UIKit
 
 class HomePageViewController: UIViewController {
     
-    var atividades: [Atividade] = []
+    var atividadeManager = AtividadeManager()
+        
+    @IBAction func botaoAzulPressed(_ sender: UIButton) {
+        let index = sender.tag
+        if atividadeManager.atividadesPool[index].status == false {
+            sender.setImage(UIImage(named: "botao azul"), for: .normal)
+            atividadeManager.atividadesPool[index].updateStatus(conluida: true)
+            atividadeManager.scorePool.userScoreBlue += 1
+            print("total de atividades laranja \(atividadeManager.scorePool.totalBlue)")
+            print("score de atividades laranja \(atividadeManager.scorePool.userScoreBlue)")
+        } else {
+            sender.setImage(UIImage(named: "botao amarelo"), for: .normal)
+            atividadeManager.atividades[index].updateStatus(conluida: false)
+            atividadeManager.scorePool.userScoreBlue -= 1
+            
+        }
+    }
+    
+    @IBAction func botaoLaranjaPressed(_ sender: UIButton) {
+        let index = sender.tag
+        if atividadeManager.atividadesPool[index].status == false {
+            sender.setImage(UIImage(named: "botao laranja"), for: .normal)
+            atividadeManager.atividadesPool[index].updateStatus(conluida: true)
+            atividadeManager.scorePool.userScoreOrange += 1
+        } else {
+            sender.setImage(UIImage(named: "botao amarelo"), for: .normal)
+            atividadeManager.atividadesPool[index].updateStatus(conluida: false)
+            atividadeManager.scorePool.userScoreOrange -= 1
+        }
+    }
     
     @IBOutlet var tableView: UITableView!
 
@@ -18,12 +47,14 @@ class HomePageViewController: UIViewController {
         
         //tableView.delegate = self
         tableView.dataSource = self
-        
 
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        atividadeManager.updateScoreTotalPool()
+        atividadeManager.updateAtividadesPool()
         tableView.reloadData()
     }
 
@@ -40,12 +71,12 @@ class HomePageViewController: UIViewController {
 }
 
 extension HomePageViewController: UITableViewDelegate {
-    
+    // eu preciso de você?
 }
 
 extension HomePageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return atividades.count
+        return atividadeManager.atividadesPool.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,12 +87,16 @@ extension HomePageViewController: UITableViewDataSource {
         
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "AtividadeCell", for: indexPath) as! AtividadeCell
         
-        tableViewCell.descicaoAtividade.text = atividades[indexPath.row].nome
+        tableViewCell.descicaoAtividade.text = atividadeManager.atividadesPool[indexPath.row].nome
+        tableViewCell.botaoEsquerdo.tag = indexPath.row
+        tableViewCell.botaoDireito.tag = indexPath.row
+        
 
         return tableViewCell
     }
     
-    
-    
 }
+
+    
+    
 

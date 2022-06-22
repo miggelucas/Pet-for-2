@@ -18,15 +18,33 @@ class SumarioViewController: UIViewController {
     @IBOutlet weak var progressBarHigiene: UIProgressView!
     @IBOutlet weak var progressBarOutros: UIProgressView!
     
-    
-    
-    
-    func calculaProgresBar(numeroAtividadesConcluidas: Int,
-                           numeroTotalDeAtividades: Int) -> Double {
-        var progresso: Double
-        progresso = Double(numeroTotalDeAtividades / numeroAtividadesConcluidas)
-        return progresso
+    func updateProgressBar() {
+        let homeVC = tabBarController?.viewControllers?[1] as! HomePageViewController
+        
+        let atividadesManager = homeVC.atividadeManager
+        
+        let totalProgressBarblue = atividadesManager.scorePool.totalBlue
+        let totalProgressBarOrange = atividadesManager.scorePool.totalOrange
+
+        let currentProgressBlue = atividadesManager.scorePool.userScoreBlue
+        let currentProgressOrange = atividadesManager.scorePool.userScoreOrange
+        
+        print("total blue \(totalProgressBarblue)")
+        print("score blue \(currentProgressBlue)")
+        print("Progress \(Float(currentProgressBlue) / Float(totalProgressBarblue))")
+        
+        progressBarAzul.progress = Float(currentProgressBlue) / Float(totalProgressBarblue)
+        progressBarLaranja.progress = Float(currentProgressOrange) / Float(totalProgressBarOrange)
+
+
     }
+    
+//    func calculaProgresBar(numeroAtividadesConcluidas: Int,
+//                           numeroTotalDeAtividades: Int) -> Double {
+//        var progresso: Double
+//        progresso = Double(numeroTotalDeAtividades / numeroAtividadesConcluidas)
+//        return progresso
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,18 +53,7 @@ class SumarioViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //let homePageViewController = tabBarController?.viewControllers![1] as! HomePageViewController
-    
-        // progressBarAzul.progress = novo valor
-        
-        //var totalAtividades: Int
-        //var totalAtividadesAzul : Int
-        //var totalAtividadesLaranja: Int
-        
-//        for atividade in // homePageViewController.atividades {
-//            atividade.
-  //      }
-        
+        updateProgressBar()
         
     }
 /*

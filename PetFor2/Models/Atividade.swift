@@ -7,50 +7,33 @@
 
 import Foundation
 
-class Atividade {
+struct Atividade {
     let nome: String
-    let tipo: String
-    let diasDaSemana: String
     let frequencia: Int
     let distribuicao: Float
- 
-    
-    
-    init(nome: String,tipo: String, diasDaSemana: String, frequencia: Int, distribuicao: Float, numeroTotalDeAtividades: Int) {
-        self.nome = nome
-        self.tipo = tipo
-        self.diasDaSemana = diasDaSemana
-        self.frequencia = frequencia
-        self.distribuicao = distribuicao
+    var status : Bool = false
+    var numeroAtividadesAzul : Int {
+        let numeroFrequenciaFloat = Float(self.frequencia)
+        let numeroAzul = round(numeroFrequenciaFloat * self.distribuicao)
+        return Int(numeroAzul)
     }
-    
-    func calculaTotalDeAtividade(diasDaSemana: String, frequencia: Int) -> Int{
-        let numeroDeDias: Int = diasDaSemana.count
-        let frequencia = frequencia
-        
-        return numeroDeDias * frequencia
+    var numeroAtividadeLaranja : Int {
+        let numeroFrequenciaFloat = Float(self.frequencia)
+        let numeroAzul = Int(round(numeroFrequenciaFloat * self.distribuicao))
+        let numeroLaranja = self.frequencia - numeroAzul
+        return Int(numeroLaranja)
     }
 
-
-    func calculaAtividadesLaranja(totalAtividades: Int, distribuicao: Float) -> Int {
-        let totalAtividades = Float(calculaTotalDeAtividade(diasDaSemana: self.diasDaSemana, frequencia: self.frequencia))
-        // a sobra do valor do slider corresponde ao laranja
-        let distribuicao = 1 - self.distribuicao
-        let numeroAtividadesAzul = Double(totalAtividades * distribuicao)
-        
-        return Int(round(numeroAtividadesAzul))
+    
+    mutating func updateStatus(conluida : Bool) {
+        self.status = conluida
     }
+    
+//    init(nome : String, frequencia : Int, distribuicao : Float) {
+//        self.nome = nome
+//        self.frequencia = frequencia
+//        self.distribuicao = distribuicao
+//    }
+//    
 }
 
-/*\
-
- atividades = [
-    task(jadasd)
- 
- 
- 
- ]
- 
- 
- 
- */

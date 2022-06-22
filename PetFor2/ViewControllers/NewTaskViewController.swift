@@ -13,43 +13,62 @@ class NovaAtividadeViewController: UIViewController {
     @IBOutlet weak var numeroFrequencia: UILabel!
     @IBOutlet weak var numeroTotalDeAtividades: UILabel!
     @IBOutlet weak var sliderDistribuicao: UISlider!
+    @IBOutlet weak var stepper: UIStepper!
     
     @IBOutlet weak var numeroAtividadesAzul: UILabel!
     @IBOutlet weak var numeroAtividadesLaranja: UILabel!
     
-
-
+    
+    let atividadeManager = AtividadeManager()
+    
+    @IBAction func stepperPressed(_ sender: UIStepper) {
+        numeroFrequencia.text = String(Int(sender.value))
+        updateDistribuicao()
+    }
+    
+    @IBAction func SliderPressed(_ sender: UISlider) {
+        updateDistribuicao()
+    }
+    
     @IBAction func limpaEntrada() {
     }
     
-    @IBAction func registrar() {
-        let diasDaSemanaViewController = navigationController?.viewControllers[0] as! DiasDaSemanaViewController
-        
-        _ = diasDaSemanaViewController.diasDaSemanaAtivados
-        
-        // aqui calcular o que se precisa para construir a classe de atividade
-        // total de atividade
-        // distrbuição
-        
-        // usar for para criar atividades com base no valor de frenquencia
-        
-        // usar for para dias da semana para adicionar no dict de atividades do
-        // dia da semana
-        let novaAtividade =
-            Atividade(nome: NomeAtividade.text! , tipo: "", diasDaSemana: "", frequencia: 1, distribuicao: 0.75, numeroTotalDeAtividades: 100)
-        
-        
-        let homePageViewController = tabBarController?.viewControllers![1] as! HomePageViewController
-        homePageViewController.atividades.append(novaAtividade)
+    func updateDistribuicao() {
+        if let numeroFrequenciaInt = Int(numeroFrequencia.text!) {
+            let numeroAzulString = String(atividadeManager.getNumeroAzul(frequencia : numeroFrequenciaInt , distribuicao: sliderDistribuicao.value))
+            let numeroLaranjaString = String(atividadeManager.getNumeroLaranja(frequencia: numeroFrequenciaInt , distribuicao: sliderDistribuicao.value))
+            
+            numeroAtividadesAzul.text = numeroAzulString
+            numeroAtividadesLaranja.text = numeroLaranjaString
+            
+        }
+
     }
     
+    @IBAction func registrar() {
+        let homeVC = tabBarController?.viewControllers?[1] as! HomePageViewController
+        
+        
+        if let nomeAtividadeSring = NomeAtividade.text {
+            let frequenciaInt = Int(numeroFrequencia.text!)!
+            let novaAtividade = Atividade(nome: nomeAtividadeSring, frequencia: frequenciaInt, distribuicao: sliderDistribuicao.value)
+            homeVC.atividadeManager.atividades.append(novaAtividade)
+            
+//            homeVC.atividadeManager.scorePool.userScoreBlue += Int(numeroAtividadesAzul.text!)!
+//            homeVC.atividadeManager.scorePool.userScoreOrange += Int(numeroAtividadesLaranja.text!)!
+            
+            print(homeVC.atividadeManager.atividades)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationController?.title = "Nova Atividade"
+        
+        NomeAtividade.delegate = self
         // Do any additional setup after loading the view.
     }
     
-
     
     // MARK: - Navigation
 
@@ -63,4 +82,19 @@ class NovaAtividadeViewController: UIViewController {
     }
     
 
+}
+
+extension NovaAtividadeViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if NomeAtividade.text != "" {
+            textField.endEditing(true)
+            return true
+        } else {
+            NomeAtividade.placeholder = "Coloque um nome para atividade"
+            return false
+        }
+    }
+    
+
+    
 }
