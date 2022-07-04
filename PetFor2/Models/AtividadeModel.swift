@@ -12,6 +12,7 @@ struct Atividade {
     let frequencia: Int
     let distribuicao: Float
     var status : Bool = false
+    
     var numeroAtividadesAzul : Int {
         let numeroFrequenciaFloat = Float(self.frequencia)
         let numeroAzul = round(numeroFrequenciaFloat * self.distribuicao)

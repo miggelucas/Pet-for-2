@@ -14,7 +14,7 @@ struct AtividadeManager {
         Atividade(nome: "Escovar pelos", frequencia: 2, distribuicao: 0.5)
     ]
     
-    var atividadesPool : [Atividade] = [Atividade(nome: "teste", frequencia: 4, distribuicao: 0.5)]
+    var atividadesPool : [AtividadePool] = [AtividadePool(nome: "teste")]
     
     var scorePool = ScorePool()
     
@@ -29,13 +29,54 @@ struct AtividadeManager {
     }
     
     mutating func updateAtividadesPool() {
-        atividadesPool = [Atividade(nome: "teste", frequencia: 4, distribuicao: 0.5)]
+        atividadesPool = [AtividadePool(nome: "teste")]
         for atividade in atividades {
             let numberOfRepetitions = atividade.frequencia
             for _ in 1...numberOfRepetitions {
-                atividadesPool.append(atividade)
+                let nomeDaAtividade = atividade.nome
+                let novaAtividadePool = AtividadePool(nome: nomeDaAtividade)
+                atividadesPool.append(novaAtividadePool)
             }
         }
+    }
+    
+    // verifica se não foi concluída ainda
+    func atividadeEmAberto(atividade : AtividadePool) -> Bool {
+        if atividade.blue == false && atividade.orange == false {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func atividadeRealizadaPor(atividade : AtividadePool) -> String {
+        if atividade.blue == true {
+            return "azul"
+        } else if atividade.orange == true {
+            return "laranja"
+        } else {
+            return "deu ruim"
+        }
+    }
+    
+    mutating func computarAtividadeAzul(index : Int) {
+        atividadesPool[index].atribuirAzul()
+        scorePool.userScoreBlue += 1
+    }
+    
+    mutating func descomputarAtividadeAzul(index : Int) {
+        atividadesPool[index].limparAtribuicoes()
+        scorePool.userScoreBlue -= 1
+    }
+    
+    mutating func computarAtividadeLaranja(index : Int) {
+        atividadesPool[index].atribuirLaranja()
+        scorePool.userScoreOrange += 1
+    }
+    
+    mutating func descomputarAtividadeLaranja(index : Int) {
+        atividadesPool[index].limparAtribuicoes()
+        scorePool.userScoreOrange -= 1
     }
     
 //    func calculaTotalDeAtividade(diasDaSemana: String, frequencia: Int) -> Int{

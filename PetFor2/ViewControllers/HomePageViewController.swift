@@ -10,34 +10,43 @@ import UIKit
 class HomePageViewController: UIViewController {
     
     var atividadeManager = AtividadeManager()
-        
+
+    
     @IBAction func botaoAzulPressed(_ sender: UIButton) {
+        let sumarioVC = tabBarController?.viewControllers?[2] as! SumarioViewController
         let index = sender.tag
-        if atividadeManager.atividadesPool[index].status == false {
+        let atividadeSelecionada = atividadeManager.atividadesPool[index]
+        
+        if atividadeManager.atividadeEmAberto(atividade: atividadeSelecionada) {
+            // caso não tenha sido feito ainda
+            print(atividadeSelecionada)
             sender.setImage(UIImage(named: "botao azul"), for: .normal)
-            atividadeManager.atividadesPool[index].updateStatus(conluida: true)
-            atividadeManager.scorePool.userScoreBlue += 1
-            print("total de atividades laranja \(atividadeManager.scorePool.totalBlue)")
-            print("score de atividades laranja \(atividadeManager.scorePool.userScoreBlue)")
-        } else {
-            sender.setImage(UIImage(named: "botao amarelo"), for: .normal)
-            atividadeManager.atividades[index].updateStatus(conluida: false)
-            atividadeManager.scorePool.userScoreBlue -= 1
+            atividadeManager.computarAtividadeAzul(index: index)
             
+        } else if atividadeManager.atividadeRealizadaPor(atividade: atividadeSelecionada) == "azul" {
+            // caso ele ja tenha marcado e queira desmarcar
+            print(atividadeManager.atividadeRealizadaPor(atividade: atividadeSelecionada))
+            sender.setImage(UIImage(named: "botao amarelo"), for: .normal)
+            atividadeManager.descomputarAtividadeAzul(index: index)
         }
+        
+        sumarioVC.updateProgressBar()
     }
     
     @IBAction func botaoLaranjaPressed(_ sender: UIButton) {
+        let sumarioVC = tabBarController?.viewControllers?[2] as! SumarioViewController
         let index = sender.tag
-        if atividadeManager.atividadesPool[index].status == false {
+        let atividadeSelecionada = atividadeManager.atividadesPool[index]
+        
+        if atividadeManager.atividadeEmAberto(atividade: atividadeSelecionada)  {
             sender.setImage(UIImage(named: "botao laranja"), for: .normal)
-            atividadeManager.atividadesPool[index].updateStatus(conluida: true)
-            atividadeManager.scorePool.userScoreOrange += 1
-        } else {
+            atividadeManager.computarAtividadeLaranja(index: index)
+        } else if atividadeManager.atividadeRealizadaPor(atividade: atividadeSelecionada) == "laranja" {
             sender.setImage(UIImage(named: "botao amarelo"), for: .normal)
-            atividadeManager.atividadesPool[index].updateStatus(conluida: false)
-            atividadeManager.scorePool.userScoreOrange -= 1
+            atividadeManager.descomputarAtividadeLaranja(index: index)
         }
+        
+        sumarioVC.updateProgressBar()
     }
     
     @IBOutlet var tableView: UITableView!
@@ -73,6 +82,8 @@ class HomePageViewController: UIViewController {
 extension HomePageViewController: UITableViewDelegate {
     // eu preciso de você?
 }
+
+//MARK: - TableView DataSource
 
 extension HomePageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

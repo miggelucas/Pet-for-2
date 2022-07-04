@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
@@ -573,6 +574,71 @@
             </objects>
             <point key="canvasLocation" x="-3642.0289855072465" y="-656.25"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Ht9-Wl-uI3">
+            <objects>
+                <viewController id="bPP-IM-mPy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1HT-XF-D8E">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="87" translatesAutoresizingMaskIntoConstraints="NO" id="RPf-xi-v9w">
+                                <rect key="frame" x="20" y="44" width="350" height="766"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione os dias da semana" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fj-bu-O0H">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="u4i-kK-Anp">
+                                        <rect key="frame" x="0.0" y="107.33333333333331" width="350" height="658.66666666666674"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gK1-42-0Y4">
+                                                <rect key="frame" x="0.0" y="44.666666030883789" width="350" height="43.666667938232422"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gK1-42-0Y4" id="mpX-Md-pJP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-DY-Dq5">
+                                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-Oa-Usg">
+                                                            <rect key="frame" x="283" y="5" width="49" height="31"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </switch>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="u4i-kK-Anp" firstAttribute="centerX" secondItem="RPf-xi-v9w" secondAttribute="centerX" id="0wi-ck-F0f"/>
+                                    <constraint firstItem="7fj-bu-O0H" firstAttribute="centerX" secondItem="RPf-xi-v9w" secondAttribute="centerX" id="Tcc-OR-GUx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wOu-RL-yqU"/>
+                        <color key="backgroundColor" name="Amarelo"/>
+                        <constraints>
+                            <constraint firstItem="wOu-RL-yqU" firstAttribute="trailing" secondItem="RPf-xi-v9w" secondAttribute="trailing" constant="20" id="f5t-ca-J7E"/>
+                            <constraint firstItem="RPf-xi-v9w" firstAttribute="top" secondItem="wOu-RL-yqU" secondAttribute="top" id="hIi-YN-DM9"/>
+                            <constraint firstItem="RPf-xi-v9w" firstAttribute="leading" secondItem="wOu-RL-yqU" secondAttribute="leading" constant="20" id="n2l-dU-f6x"/>
+                            <constraint firstItem="wOu-RL-yqU" firstAttribute="bottom" secondItem="RPf-xi-v9w" secondAttribute="bottom" id="uvk-BR-utx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RHU-qg-3wy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-783.07692307692309" y="-1142.4170616113743"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Check" width="28" height="28"/>
@@ -588,6 +654,9 @@
         <image name="atividadades counter display" width="85" height="85"/>
         <image name="atividadades counter display o" width="85" height="85"/>
         <image name="botao amarelo" width="44" height="44"/>
+        <namedColor name="Amarelo">
+            <color red="0.98400002717971802" green="0.92199999094009399" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

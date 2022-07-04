@@ -11,6 +11,7 @@ import UIKit
 
 class AtividadeCell: UITableViewCell {
     
+
     
     @IBOutlet weak var botaoEsquerdo: UIButton!
     // deve mudar a cor do botão para azul
@@ -25,6 +26,14 @@ class AtividadeCell: UITableViewCell {
     
     @IBOutlet weak var descicaoAtividade : UILabel!
     // deve receber a atividade
+    
+
+    // O botao precisa ter uma cor diferente caso a atividade ja tenha sido realizada
+//    func checkaAtividadeEmAberto() {
+//        let homePageVC = tabBarController?.viewControllers?[1] as! HomePageViewController
+//
+//        atividadePool = homePageVC.atividadeManager.atividadesPool
+//    }
     
     
 }
